@@ -35,7 +35,7 @@ export function HomeScreen() {
         display: "flex",
         flexDirection: "column",
         background: "transparent",
-        minHeight: "100dvh",
+        height: "100%",
         position: "relative",
         overflow: "hidden",
         overscrollBehavior: "none",
@@ -65,23 +65,31 @@ export function HomeScreen() {
       <main
         style={{
           flex: 1,
-          overflow: "hidden",
+          minHeight: 0,
+          overflowY: "auto",
+          overflowX: "hidden",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          paddingBottom: 8,
+          paddingBottom: "calc(var(--action-bar-height) + var(--action-bar-padding-y) + var(--space-lg) + env(safe-area-inset-bottom, 0px) + clamp(8px, 1vh, 16px))",
+          paddingTop: "clamp(8px, 1vh, 16px)",
         }}
       >
         <GreetingSection />
       </main>
       <motion.div
         style={{
-          padding: "var(--action-bar-padding-y) var(--action-bar-padding-x) var(--space-lg)",
-          paddingBottom: "calc(var(--space-lg) + env(safe-area-inset-bottom, 0px))",
+          position: "fixed",
+          bottom: 34,
+          left: "50%",
+          transform: "translateX(-50%)",
+          flexShrink: 0,
+          padding: "var(--action-bar-padding-y) var(--action-bar-padding-x) 0",
+          paddingBottom: 0,
           maxWidth: 390,
-          margin: "0 auto",
           width: "100%",
+          zIndex: 100,
         }}
       >
         <motion.button

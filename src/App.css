@@ -1,6 +1,52 @@
 /* App-specific styles */
+.app-wrapper {
+  background: transparent !important;
+}
+
 .list-view-section {
   height: 898px;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.status-bar {
+  flex-shrink: 0;
+  z-index: 100;
+  background: transparent !important;
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+/* Ensure no white background shows through */
+.status-bar,
+.status-bar * {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Ensure parent elements don't add background */
+.status-bar::before,
+.status-bar::after {
+  display: none !important;
+  background: transparent !important;
+}
+
+/* Override any inherited backgrounds */
+#root > div:first-child {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Ensure the app wrapper and all its children up to status bar are transparent */
+.app-wrapper,
+.app-wrapper > * {
+  background-color: transparent !important;
+}
+
+/* Ensure header is transparent */
+header {
+  background: transparent !important;
+  background-color: transparent !important;
 }

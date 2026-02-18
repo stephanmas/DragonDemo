@@ -102,34 +102,40 @@ export function GreetingSection() {
         position: "relative",
         borderRadius: "var(--radius-xl)",
         overflow: "hidden",
-        minHeight: 280,
-        margin: "0 16px 24px",
+        minHeight: "clamp(240px, 35vh, 320px)",
+        maxHeight: "calc(100dvh - 54px - 60px - 100px)",
+        width: "calc(100% - 32px)",
+        maxWidth: 358,
+        margin: "0 16px clamp(16px, 3vh, 24px)",
         alignSelf: "center",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        flexShrink: 0,
       }}
     >
       {/* Content */}
       <div
         style={{
           position: "relative",
-          padding: "32px 24px 24px",
+          padding: "clamp(24px, 4vh, 32px) clamp(20px, 4vw, 24px) clamp(20px, 3vh, 24px)",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: 8,
+          gap: "clamp(6px, 1vh, 8px)",
+          width: "100%",
         }}
       >
         <h1
           style={{
             margin: 0,
-            fontSize: "48px",
+            fontSize: "clamp(36px, 8vw, 48px)",
             fontWeight: 700,
             color: "#fff",
             textShadow: "0 1px 3px rgba(0,0,0,0.2)",
             letterSpacing: "-0.02em",
             textAlign: "center",
+            lineHeight: 1.1,
           }}
         >
           Olá, Alex.
@@ -137,7 +143,7 @@ export function GreetingSection() {
         <p
           style={{
             margin: 0,
-            fontSize: "20px",
+            fontSize: "clamp(16px, 3.5vw, 20px)",
             fontWeight: 500,
             color: "rgba(255,255,255,0.95)",
             textShadow: "0 1px 2px rgba(0,0,0,0.15)",
@@ -152,8 +158,9 @@ export function GreetingSection() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: 20,
-            marginTop: 12,
+            gap: "clamp(16px, 3vw, 20px)",
+            marginTop: "clamp(8px, 1.5vh, 12px)",
+            flexWrap: "wrap",
           }}
         >
           <span
@@ -161,12 +168,12 @@ export function GreetingSection() {
               display: "flex",
               alignItems: "center",
               gap: 6,
-              fontSize: "15.4px",
+              fontSize: "clamp(13px, 2.5vw, 15.4px)",
               color: "rgba(255,255,255,0.95)",
               textShadow: "0 1px 2px rgba(0,0,0,0.15)",
             }}
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ flexShrink: 0 }}>
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
@@ -177,7 +184,7 @@ export function GreetingSection() {
               display: "flex",
               alignItems: "center",
               gap: 6,
-              fontSize: "15.4px",
+              fontSize: "clamp(13px, 2.5vw, 15.4px)",
               color: "rgba(255,255,255,0.95)",
               textShadow: "0 1px 2px rgba(0,0,0,0.15)",
             }}

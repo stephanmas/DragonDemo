@@ -69,19 +69,20 @@ export function InputBar({
   };
 
   const barPadding = {
-    padding: "var(--action-bar-padding-y) var(--action-bar-padding-x) var(--space-lg)",
-    paddingBottom: "calc(var(--space-lg) + env(safe-area-inset-bottom, 0px))",
+    padding: "var(--action-bar-padding-y) var(--action-bar-padding-x) 0",
+    paddingBottom: 0,
   };
 
   const fixedWrapperStyle = fixedAtBottom
     ? {
         position: "fixed" as const,
-        bottom: 0,
+        bottom: 34,
         left: 0,
         right: 0,
         zIndex: 10,
         maxWidth: 390,
         margin: "0 auto",
+        marginBottom: 0,
         width: "100%",
         background: "linear-gradient(180deg, rgba(229, 238, 248, 0.98) 0%, #E5EEF8 100%)",
         backdropFilter: "blur(8px)",
@@ -111,7 +112,7 @@ export function InputBar({
           minHeight: "var(--action-bar-height)",
           boxSizing: "border-box",
           paddingTop: isMultiline ? 0 : 0,
-          paddingRight: "var(--action-bar-padding-x)",
+          paddingRight: 8,
           paddingBottom: isMultiline ? 8 : 0,
           paddingLeft: 8,
           boxShadow: isWelcome ? "none" : "0 2px 12px var(--color-shadow)",
@@ -204,6 +205,7 @@ export function InputBar({
               alignItems: "center",
               justifyContent: "center",
               flexShrink: 0,
+              marginLeft: 8,
             }}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" style={{ transform: "rotate(-90deg)" }}>

@@ -40,7 +40,10 @@ export function Header({ onBack, showBack = true, onChatClick, variant = "chat" 
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "calc(8px + env(safe-area-inset-top, 0px)) 16px 16px",
+        padding: "16px",
+        paddingTop: "94px",
+        background: "transparent",
+        backgroundColor: "transparent",
       }}
     >
       {showBack ? (

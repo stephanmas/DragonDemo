@@ -144,17 +144,29 @@ export function ChatPanel({ onBack, autoFocusInput = false }: ChatPanelProps) {
   };
 
   return (
-    <div
-      className="app-container"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        height: "100dvh",
-        minHeight: "100dvh",
-        background: "linear-gradient(180deg, #F7F1ED 0%, #EDEDF6 50%, #E5EEF8 100%)",
-        overflow: "hidden",
-      }}
-    >
+    <>
+      {/* Fixed gradient background that extends behind status bar */}
+      <div
+        style={{
+          position: "fixed",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          minHeight: "100dvh",
+          background: "linear-gradient(180deg, #F7F1ED 0%, #EDEDF6 50%, #E5EEF8 100%)",
+          zIndex: -1,
+        }}
+      />
+      <div
+        className="app-container"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          height: "100%",
+          background: "transparent",
+          overflow: "hidden",
+        }}
+      >
       <div style={{ flexShrink: 0 }}>
         <Header showBack onBack={onBack} />
       </div>
@@ -472,6 +484,7 @@ export function ChatPanel({ onBack, autoFocusInput = false }: ChatPanelProps) {
         autoFocus={autoFocusInput}
         fixedAtBottom
       />
-    </div>
+      </div>
+    </>
   );
 }

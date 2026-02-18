@@ -45,12 +45,16 @@
   box-sizing: border-box;
 }
 
+html {
+  background: transparent !important;
+}
+
 body {
   margin: 0;
   font-family: var(--font-sans);
   font-size: var(--font-size-base);
   color: var(--color-text);
-  background: var(--color-bg);
+  background: transparent !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -59,6 +63,15 @@ body {
 #root {
   min-height: 100vh;
   min-height: 100dvh;
+  background: transparent !important;
+}
+
+/* Ensure viewport has no white background */
+html,
+body,
+#root,
+#root > div {
+  background-color: transparent !important;
 }
 
 /* Mobile-first: constrain width for phone mockup */
