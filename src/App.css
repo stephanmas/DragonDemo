@@ -1,0 +1,6 @@
+/* App-specific styles */
+.list-view-section {
+  height: 898px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
