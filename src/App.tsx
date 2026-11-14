@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { ChatScreen } from "./pages/ChatScreen";
 import { HomeScreen } from "./pages/HomeScreen";
+import { NearbyScreen } from "./pages/NearbyScreen";
 import { StatusBar } from "./components/StatusBar";
 import { HomeIndicator } from "./components/HomeIndicator";
 import "./App.css";
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/chat" element={<ChatScreen />} />
+          <Route path="/nearby" element={<NearbyScreen />} />
         </Routes>
       </div>
       <HomeIndicator />

@@ -77,6 +77,32 @@ export function HomeScreen() {
         }}
       >
         <GreetingSection />
+        <motion.button
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.3 }}
+          whileTap={{ scale: 0.97 }}
+          onClick={() => navigate("/nearby")}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+            height: 44,
+            padding: "0 18px",
+            borderRadius: 999,
+            border: "1px solid rgba(255, 255, 255, 0.5)",
+            background: "rgba(255, 255, 255, 0.25)",
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
+            color: "#fff",
+            fontFamily: "inherit",
+            fontSize: "var(--font-size-sm)",
+            fontWeight: 600,
+            cursor: "pointer",
+          }}
+        >
+          <span aria-hidden>📍</span> Discover places nearby
+        </motion.button>
       </main>
       <motion.div
         style={{
